@@ -92,8 +92,10 @@ pub enum DebugState {
 
 /// State of an interpreter
 pub struct Interpreter<'a, 'b, C: ContextObject> {
-    pub(crate) vm: &'a mut EbpfVm<'b, C>,
-    pub(crate) executable: &'a Executable<C>,
+    /// Pointer to EbpfVM
+    pub vm: &'a mut EbpfVm<'b, C>,
+    /// Pointer to Executable
+    pub executable: &'a Executable<C>,
     pub(crate) program: &'a [u8],
     pub(crate) program_vm_addr: u64,
 
